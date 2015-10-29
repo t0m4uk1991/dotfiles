@@ -1,0 +1,19 @@
+[user]
+	name = Andrii Tomchuk
+	email = tomchukandriy@gmail.com
+[color]
+	ui = true
+[core]
+	editor = vim
+[http]
+	postBuffer = 524288000
+[alias]
+    cl = clone
+    p  = push
+    f  = fetch
+    a  = add
+    l  = log
+    c  = commit
+    b = branch
+    s  = status
+    r  = rebase
