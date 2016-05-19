@@ -1,16 +1,12 @@
-- clean: ['~']
-
+- clean: ["~"]
 - link:
-    ~/.dotfiles: ''
+    ~/.dotfiles: ""
     ~/.vim: vim/
     ~/.vimrc: vimrc
     ~/.gitconfig: gitconfig
     ~/.bash-git-prompt: bash-git-prompt
-    ~/.conkyrc: conkyrc
 
-    
-    
-    
-    
 - shell:
- - [git submodule update --init --recursive, Installing submodules]
+  - [git submodule update --init --recursive, Installing submodules]
+  - [echo "source ~/.bash-git-prompt/gitprompt.sh" >> ~/.bashrc]
+  - [echo "GIT_PROMPT_ONLY_IN_REPO=1" >> ~/.bashrc]
