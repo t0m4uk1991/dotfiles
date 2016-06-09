@@ -1,5 +1,5 @@
 [user]
-	name = Andrii Tomchuk
+	name = t0m4uk1991
 	email = t0m4uk1991@gmail.com
 [color]
 	ui = true
@@ -17,3 +17,4 @@
     b = branch
     s  = status
     r  = rebase
+    ll = log --oneline --graph --decorate
