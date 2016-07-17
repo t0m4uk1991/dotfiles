@@ -4,9 +4,10 @@
     ~/.vim: vim/
     ~/.vimrc: vimrc
     ~/.gitconfig: gitconfig
+    ~/.gitignore: gitignore
     ~/.bash-git-prompt: bash-git-prompt
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - [echo "source ~/.bash-git-prompt/gitprompt.sh" >> ~/.bashrc]
-  - [echo "GIT_PROMPT_ONLY_IN_REPO=1" >> ~/.bashrc]
+  - [echo "GIT_PROMPT_ONLY_IN_REPO=0" >> ~/.bashrc]

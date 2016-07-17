@@ -1,0 +1,48 @@
+# Maven files
+target/
+release.properties
+buildNumber.properties
+.mvn/timing.properties
+
+# Gradle files
+.gradle/
+build/
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+.project
+*.log
+
+# Intellij
+*.iml
+.idea/workspace.xml
+
+# vim
+*.swp
+*.swo
+
+# Keystore files
+*.jks
+
+#RoR
+/log
+/tmp
+/db/*.sqlite3
+/db/*.sqlite3-journal
+/public/system
+/coverage/
+/spec/tmp
+.rvmrc
