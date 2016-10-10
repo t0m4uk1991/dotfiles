@@ -50,15 +50,14 @@ function setUpTimeZone {
 
 function setUpKeyboardLayout {
 	echo "update properties in /etc/default/keyboard and ~/.config/openbox/autostart"
-	sudo su
-	echo "# KEYBOARD CONFIGURATION FILE
+	
+	sudo sh -c 'echo "# KEYBOARD CONFIGURATION FILE
 	## Consult the keyboard(5) manual page.
 	#XKBMODEL=\"pc105\"
 	#XKBLAYOUT=\"us,ua\"
 	#XKBVARIANT=""
 	#XKBOPTIONS=\"grp:alt_shift_toggle\"
-	#BACKSPACE=\"guess\"" > /etc/default/keyboard
-	exit
+	#BACKSPACE=\"guess\"" > /etc/default/keyboard'
 	
 	echo "fbxkb &" >> ~/.config/openbox/autostart
 	
