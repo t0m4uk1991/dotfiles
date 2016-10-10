@@ -1,38 +1,20 @@
-#!/bin/bash
+#!/bin/bash -ex
 
 echo "Welcome to my post install script"
 
 #install section
 function installCommonTools {
-	echo "Installing: git 
-					  dnsutils 
-					  gtypist 
-					  vim 
-					  moc-ffmpeg-plugin 
-					  nmap 
-					  keepassx
-					  ranger
-                      nmap
-                      keepasx"
-	sudo apt-get install -y git dnsutils gtypist vim moc-ffmpeg-plugin mocp macchanger ascp calibre nmap netcat tcpdump keepassx ranger
-}
-
-function addChromeRepo {
-	echo "adding Chrome repo to source.list"
-	wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
-	sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
-}
-
-function installChrome {
-	echo "installing Google Chrome..."
-	addChromeRepo
-	sudo apt-get update 
-	sudo apt-get install google-chrome-stable
-}
-
-function installSkype {
-	echo "installing Skype ..."
-	#TBD
+	echo "Installing: git                (vcs)
+					  dnsutils           (set of network tools) 
+					  gtypist            (keyboard simulator)
+					  vim                (editor)
+					  moc-ffmpeg-plugin  (console player) 
+					  macchanger         (tool for changing MAC)
+					  calibre            (ebook manager)
+					  ranger             (consolo file manager)
+                      nmap               (portscanner)
+                      keepassx           (password manager)"
+	sudo apt-get install -y git dnsutils gtypist vim moc-ffmpeg-plugin macchanger calibre nmap keepassx ranger
 }
 
 function downloadAndInstallRvm {
@@ -40,15 +22,6 @@ function downloadAndInstallRvm {
 	gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 	curl -sSL https://get.rvm.io | bash
 	source /home/atom/.rvm/scripts/rvm
-}
-
-function downloadAndInstallMongoDb{
-    sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
-    echo "deb http://repo.mongodb.org/apt/debian wheezy/mongodb-org/3.2 main" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
-    sudo apt-get update
-    sudo apt-get install -y mongodb-org
-    sudo service mongod start
-    grep "waiting for connections on port" /var/log/mongodb/mongod.log
 }
 
 function installJava {
@@ -105,7 +78,7 @@ function makeDecision {
 }
 
 function runPostInstallScript {
-	actions=("installCommonTools" "installChrome" "installSkype"  "downloadAndInstallRvm" "installJava" "setUpTimeZone" "setUpKeyboardLayout" "downloadAndInstallMongoDb")
+	actions=("installCommonTools" "downloadAndInstallRvm" "installJava" "setUpTimeZone" "setUpKeyboardLayout")
 		for action in ${!actions[*]}
 		do
 			makeDecision "${actions[$action]}"
