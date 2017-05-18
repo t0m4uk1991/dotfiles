@@ -9,6 +9,7 @@
 [http]
 	postBuffer = 524288000
 [alias]
+    alias = config --get-regexp alias
     cl = clone
     p  = push
     f  = fetch

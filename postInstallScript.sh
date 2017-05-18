@@ -13,8 +13,9 @@ function installCommonTools {
 					  calibre            (ebook manager)
 					  ranger             (consolo file manager)
                       nmap               (portscanner)
-                      keepassx           (password manager)"
-	sudo apt-get install -y git dnsutils gtypist vim moc-ffmpeg-plugin macchanger calibre nmap keepassx ranger
+                      keepassx           (password manager)
+                      gitk               (git ui tool)"
+	sudo apt-get install -y git dnsutils gtypist vim moc-ffmpeg-plugin macchanger calibre nmap keepassx ranger gitk
 }
 
 function downloadAndInstallRvm {
