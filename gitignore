@@ -47,7 +47,31 @@ local.properties
 /spec/tmp
 .rvmrc
 
-#R
+# R
 .RData
 .Rhistory
 
+# angulrajs
+/build/
+/dist/
+/benchpress-build/
+.DS_Store
+gen_docs.disable
+test.disable
+regression/temp*.html
+performance/temp*.html
+*~
+*.swp
+angular.js.tmproj
+/node_modules/
+bower_components/
+angular.xcodeproj
+.agignore
+.lvimrc
+libpeerconnection.log
+npm-debug.log
+/tmp/
+/scripts/bower/bower-*
+.vscode
+*.log
+*.stackdump
