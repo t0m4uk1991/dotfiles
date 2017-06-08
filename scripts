@@ -1,0 +1,15 @@
+function init_variables() {
+    export EDITOR=vim
+    HISTSIZE=1000
+}
+
+function invitation() {
+    clear
+    echo -ne "${LIGHTGREEN}" "Hello, $USER. today is, "; date
+    echo -e "${WHITE}"; cal ;  
+    echo -ne "${CYAN}";
+    echo -ne "${LIGHTPURPLE}Sysinfo:";uptime ;echo ""
+}
+
+init
+invitation

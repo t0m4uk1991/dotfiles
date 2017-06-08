@@ -1,1 +1,9 @@
 alias rr='reset'
+alias ll='ls -la'
+
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+
+alias pravda='lynx -term=vt100 pravda.com.ua'
