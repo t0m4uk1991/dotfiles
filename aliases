@@ -1,5 +1,6 @@
 alias rr='reset'
 alias ll='ls -la'
+alias lt='ls -lt'
 
 alias ..='cd ..'
 alias ...='cd ../..'
