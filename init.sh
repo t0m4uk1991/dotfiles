@@ -22,7 +22,7 @@ function check_assignet_to_me_tasks() {
     DAY_OF_WEEK=$(date +%u)
     CURRENT_HOUR=$(date +"%H")
 
-    if [[ "$DAY_OF_WEEK" < "6" && "$CURRENT_HOUR" > 9 && "$CURRENT_HOUR" < 18 ]]
+    if [[ "$DAY_OF_WEEK" -lt 6 && "$CURRENT_HOUR" -gt 9 && "$CURRENT_HOUR" -lt 18 ]]
     then
         JIRA_RESPONCE=$(curl -u "$JIRA_LOGIN":"$JIRA_PASSWORD" -X GET -s -H "Content-Type: application/json" "$JIRA_REQUEST_PATH")
         SELECTED_TICKETS=$(echo $JIRA_RESPONCE | jq "$JQ_STRING" | awk -F "," "$AWK_OUTPUT_FORMAT_STRING")
