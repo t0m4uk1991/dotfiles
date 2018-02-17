@@ -11,6 +11,51 @@ function invitation() {
     echo -ne "${LIGHTPURPLE}Sysinfo:";uptime ;echo ""
 }
 
+function ok {
+  cat <<  "EOF"
+             KICK ASS!
+
+             ___...___
+         _.-'   '''   '-._
+        /    __\__/___    \
+       /__.-" / || \  "-.__\
+       |     (_'/\'_)      |
+       |                   |
+        \_ -._______.-   _/
+      _." "-._________.-" "._
+     /  "._     :\      _."  \
+     |   _/      :|     \_   |
+     |__/        :|       \__|
+       \________;/_________/
+        |_________________|   lka
+EOF
+}
+
+function not_ok {
+  cat <<  "EOF"
+
+                       ,~~~~~~~~~~~.
+                       '  HIIII Dee  `
+        ,~~~~~~,       |    Ho!      |
+       / ,      \      ',  ________,"
+      /,~|_______\.      \/
+     /~ (__________)
+    (*)  ; (^)(^)':
+        =;  ____  ;
+          ; """"  ;=
+   {"}_   ' '""' ' _{"}
+   \__/     >  <   \__/
+      \    ,"   ",  /
+       \  "       /"
+          "      "=
+           >     <
+          ="     "-
+          -`.   ,'
+                -
+      SHW    `--'
+EOF
+}
+
 function check_assignet_to_me_tasks() {
     JIRA_LOGIN=""
     JIRA_PASSWORD=""
@@ -28,6 +73,8 @@ function check_assignet_to_me_tasks() {
         SELECTED_TICKETS=$(echo $JIRA_RESPONCE | jq "$JQ_STRING" | awk -F "," "$AWK_OUTPUT_FORMAT_STRING")
         echo "$SELECTED_TICKETS"
     fi
+    
+    ok
 }
 
 init_git_bash_prompt
