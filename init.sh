@@ -70,11 +70,18 @@ function check_assignet_to_me_tasks() {
     if [[ "$DAY_OF_WEEK" -lt 6 && "$CURRENT_HOUR" -gt 9 && "$CURRENT_HOUR" -lt 18 ]]
     then
         JIRA_RESPONCE=$(curl -u "$JIRA_LOGIN":"$JIRA_PASSWORD" -X GET -s -H "Content-Type: application/json" "$JIRA_REQUEST_PATH")
+
+        responce_code=$?
+        if [[ "$responce_code" -ne "0" ]]
+        then
+            not_ok
+        else
+            ok
+        fi
+
         SELECTED_TICKETS=$(echo $JIRA_RESPONCE | jq "$JQ_STRING" | awk -F "," "$AWK_OUTPUT_FORMAT_STRING")
         echo "$SELECTED_TICKETS"
     fi
-    
-    ok
 }
 
 init_git_bash_prompt
