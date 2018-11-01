@@ -8,3 +8,5 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
 alias pravda='lynx -term=vt100 pravda.com.ua'
+
+alias mcis='rr && mvn clean install -DskipTests'
