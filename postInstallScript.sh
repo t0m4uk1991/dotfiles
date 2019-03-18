@@ -15,7 +15,7 @@ function installCommonTools {
                       nmap               (portscanner)
                       keepassx           (password manager)
                       gitk               (git ui tool)"
-	sudo apt-get install -y git dnsutils gtypist vim moc-ffmpeg-plugin macchanger calibre nmap keepassx ranger gitk
+	sudo apt-get install -y git dnsutils gtypist vim moc-ffmpeg-plugin macchanger calibre nmap keepassx ranger gitk net-tools
 }
 
 function downloadAndInstallRvm {
